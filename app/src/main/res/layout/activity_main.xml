@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.student.paint.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp"
+        tools:ignore="MissingConstraints">
+
+        <com.example.student.paint.Surface
+            android:id="@+id/Surface"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/BlueButton"
+            android:layout_alignParentStart="true"
+            />
+
+        <Button
+            android:id="@+id/BlueButton"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:background="@color/colorBlue"
+            android:onClick="onClicked" />
+
+        <Button
+            android:id="@+id/RedButton"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@+id/BlueButton"
+            android:background="@android:color/holo_red_dark"
+            android:onClick="onClicked" />
+
+        <Button
+            android:id="@+id/YellowButton"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@+id/RedButton"
+            android:background="@color/colorYellow"
+            android:onClick="onClicked" />
+
+        <Button
+            android:id="@+id/GreenButton"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@+id/YellowButton"
+            android:background="@color/colorGreen"
+            android:onClick="onClicked" />
+
+        <Button
+            android:id="@+id/ClearButton"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+
+            android:onClick="onClicked"
+            android:text="x" />
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
