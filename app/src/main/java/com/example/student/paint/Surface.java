@@ -29,7 +29,7 @@ public class Surface extends SurfaceView implements SurfaceHolder.Callback, Runn
 
     public Surface(Context context, AttributeSet attrs) {
         super(context, attrs);
-        this.context=context;
+        this.context = context;
         surfaceHolder = getHolder();
         surfaceHolder.addCallback(this);
     }
@@ -43,7 +43,7 @@ public class Surface extends SurfaceView implements SurfaceHolder.Callback, Runn
     }
     public void pauseDrawing()
     {
-        isRun=false;
+        isRun = false;
     }
 
     @Override
@@ -54,7 +54,7 @@ public class Surface extends SurfaceView implements SurfaceHolder.Callback, Runn
             switch (event.getAction())
             {
                 case MotionEvent.ACTION_DOWN:
-                    path=new MyPath();
+                    path = new MyPath();
                     path.moveTo(event.getX(),event.getY());
                     path.addCircle(event.getX(),event.getY(), 7, MyPath.Direction.CW);
                     return true;
@@ -63,7 +63,7 @@ public class Surface extends SurfaceView implements SurfaceHolder.Callback, Runn
                     path.addCircle(event.getX(),event.getY(), 7, MyPath.Direction.CCW);
                     canvas.drawPath(path, paint);
                     MyPath mp;
-                    mp=path;
+                    mp = path;
                     mp.setPaintColor(Params.Color);
                     Params.paths.add(mp);
                     return true;
@@ -87,7 +87,7 @@ public class Surface extends SurfaceView implements SurfaceHolder.Callback, Runn
     private void Clearing_canvas()
     {
         this.canvas.drawColor(Color.TRANSPARENT, PorterDuff.Mode.MULTIPLY);
-        Params.ClearCanvas=false;
+        Params.ClearCanvas = false;
 
         if (!Params.paths.isEmpty()) {
             Iterator<MyPath> it = Params.paths.iterator();
@@ -97,7 +97,7 @@ public class Surface extends SurfaceView implements SurfaceHolder.Callback, Runn
                 it.remove();
             }
         }
-        Params.ClearCanvas=false;
+        Params.ClearCanvas = false;
     }
 
     private void Restoring_canvas()
@@ -107,7 +107,7 @@ public class Surface extends SurfaceView implements SurfaceHolder.Callback, Runn
             paint.setColor(color);
             this.canvas.drawPath(path, paint);
         }
-        Params.RestoreCanvas=false;
+        Params.RestoreCanvas = false;
     }
 
     @Override
